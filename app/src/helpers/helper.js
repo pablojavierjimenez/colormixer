@@ -9,30 +9,28 @@ class Helpers {
   /**
    * @method
    * @param {string} selector
-   * @returns {*}
+   * @returns {Array} Node List Of element
    */
   _$( selector ) {
+    var el = document.querySelectorAll( selector );
     let out;
-    let firsSelectorElement = selector.split(' ')[0];
-    let selectorType = 'tag';
-    if (firsSelectorElement.charAt(0) === '.') {
-      selectorType = 'class';
-    }
-    else if (firsSelectorElement.charAt(0) === '#') {
-      selectorType = 'id';
-    };
-    switch (selectorType) {
-      case 'class':
-        out = document.getElementsByClassName(firsSelectorElement.slice(1, firsSelectorElement.length))
-        break;
-      case 'id':
-        out = document.getElementById(firsSelectorElement.slice(1, firsSelectorElement.length))
-        break;
+    let parser = new DOMParser();
+    el.forEach((item) => {
+      item.html = (tpl) => {
+        item.innerHTML = tpl;
+      };
+      item.add = (tpl) => {
+        let el = parser.parseFromString(markup, "text/xml");
+        el = el.documentElement;
+        item.append(el);
+      };
+      item.click = (callBack) => {
+        item.addEventListener('click', callBack);
+      };
+    });
 
-      default:
-        out = document.getElementsByTagName(firsSelectorElement);
-        break;
-    }
+    (el.length <= 1) ? out = el[0] : out = el;
+
     return out;
   }
 
