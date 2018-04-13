@@ -2,6 +2,7 @@
  * IMPORTS
  */
 // MODULES
+import { $ } from './helpers/helper';
 import { ModalComponent } from './modules/modal/modal.component';
 import { HeaderComponent } from './modules/header/header.component';
 // SERVICES
@@ -16,7 +17,8 @@ const app = {
   services: {
     webStorage: new WebStorageService(window)
   }
-}
+};
+window.$ = $;
 console.log(app.modules);
 // debugger;
 document.getElementById('message').innerText = 'Hello World!';
