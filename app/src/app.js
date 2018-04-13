@@ -10,7 +10,7 @@ import { WebStorageService } from './services/webStorage.service';
 
 const app = {
   modules: {
-    modalComponent: new ModalComponent( window, document, '.app_modal__container'),
+    modalComponent: new ModalComponent( window, document, '.app_modal'),
     headerComponent: new HeaderComponent()
   },
   services: {

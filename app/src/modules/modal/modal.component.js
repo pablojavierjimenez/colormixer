@@ -23,13 +23,14 @@ export class ModalComponent {
     this.domSelector = domSelector;
     this.modalContainer = this._createModalDomElemet();
 
+
     // Methods
     this.open = this._openModal;
     this.close = this._closeModal;
 
     // adding tutorial to modal if is fist time user
     if ( this._openModalIfIsFirstTimeUser(bom) ) {
-      this._addModalTutorial( this.modalContainer );
+      this._addModalTutorial(this.modalContainer.children[0].children[1]);
       this._openModal();
     }
 
@@ -51,21 +52,52 @@ export class ModalComponent {
   }
 
   _createModalDomElemet() {
+    let overlay = createDomElement({
+      elementType: 'section',
+      attributeObj: {
+        'class': `${this.domSelector}__overlay`
+      }
+    });
     let modal = createDomElement({
       elementType: 'section',
       attributeObj: {
-        'class': this.domSelector
+        'class': `${this.domSelector}__container`
       }
     });
-    return modal;
+    let modalHeader = createDomElement({
+      elementType: 'header',
+      attributeObj: {
+        class: `${this.domSelector}__header`
+      }
+    });
+    let modalBody = createDomElement({
+      elementType: 'section',
+      attributeObj: {
+        class: `${this.domSelector}__body`
+      }
+    });
+    let modalFooter = createDomElement({
+      elementType: 'footer',
+      attributeObj: {
+        class: `${this.domSelector}__footer`
+      }
+    });
+    modal.appendChild(modalHeader);
+    modal.appendChild(modalBody);
+    modal.appendChild(modalFooter);
+    overlay.appendChild( modal );
+    return overlay;
   }
 
+  _addModalheader() {
+
+  }
   _addModalTutorial( modal ) {
     modal.innerHTML = `
-        <div class="app_modalSlide app_modalSlide__step">
+        <div class="app_modalSlide app_modalSlide__step_1">
           <img src="https://picsum.photos/500/500/?random=1" />
           </div>
-        <div class="app_modalSlide app_modalSlide__step">
+        <div class="app_modalSlide app_modalSlide__step_2">
           <img src="https://picsum.photos/500/500/?random=2"/>
         </div>`
     ;
