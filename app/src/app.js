@@ -11,8 +11,8 @@ import { WebStorageService } from './services/webStorage.service';
 
 const app = {
   modules: {
-    modalComponent: new ModalComponent( window, document, '.app_modal'),
-    headerComponent: new HeaderComponent()
+    headerComponent: new HeaderComponent( document, 'app_header'),
+    modalComponent: new ModalComponent( window, document, '.app_modal')
   },
   services: {
     webStorage: new WebStorageService(window)
@@ -20,5 +20,4 @@ const app = {
 };
 window.$ = $;
 console.log(app.modules);
-// debugger;
-document.getElementById('message').innerText = 'Hello World!';
+

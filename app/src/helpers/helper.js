@@ -5,6 +5,7 @@ class Helpers {
   constructor() {
     this.$ = this._$;
     this.createDomElement = this._createDomElement;
+    this.createComponent = this._createComponent;
   }
   /**
    * @method
@@ -35,24 +36,24 @@ class Helpers {
   }
 
   /**
-  * @method
-  * @param { object } configObj configuration objet to define type and attributes of new created dom element
-  * @example Example of configuration object and usage
-  * let elementConfig = {
-  *   inline: 'false',
-  *   attributeObj: {
-  *     id: 'elementId',
-  *     class: 'btn btn-danger'
-  *     style: 'padding:2rem;'
-  *   },
-  *   content: {
-  *     innerHTML: '<div>lalala</div>',
-  *     innerText: 'hola mundo'
-  *   }
-  * };
-  * let element = createDomElement();
-  * @returns {domObject}
-  */
+    * @method
+    * @param { object } configObj configuration objet to define type and attributes of new created dom element
+    * @example Example of configuration object and usage
+    * let elementConfig = {
+    *   inline: 'false',
+    *   attributeObj: {
+    *     id: 'elementId',
+    *     class: 'btn btn-danger'
+    *     style: 'padding:2rem;'
+    *   },
+    *   content: {
+    *     innerHTML: '<div>lalala</div>',
+    *     innerText: 'hola mundo'
+    *   }
+    * };
+    * let element = createDomElement();
+    * @returns {domObject}
+    */
   _createDomElement ( configObj ) {
     var el, newElementConfig;
     if (typeof (configObj) === 'string') {
@@ -84,8 +85,30 @@ class Helpers {
     // console.log(container);
     return container;
   }
+
+  _createComponent ( customElementName , template) {
+    window.customElements.define(
+      customElementName,
+      class extends HTMLElement {
+        constructor() {
+          // If you define a ctor, always call super() first!
+          // This is specific to CE and required by the spec.
+          super();
+          this.innerHTML = template;
+          // Setup a click listener on <app-drawer> itself.
+          this.addEventListener('click', ( ev ) => {
+            console.log(customElementName, ev);
+          });
+        }
+      },
+      {
+        extends: 'div'
+      }
+    );
+
+  }
 }
 let Helper = new Helpers();
-
 export let $ = Helper.$;
 export let createDomElement = Helper.createDomElement;
+export let createComponent = Helper.createComponent;
