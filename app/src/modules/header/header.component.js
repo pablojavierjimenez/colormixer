@@ -1,7 +1,7 @@
 /**
  * imports
  */
-import { $, createDomElement, createComponent } from '../../helpers/helper';
+import { $, createDomElement, Component } from '../../helpers/helper';
 import './header.style.css';
 
 export class HeaderComponent {
@@ -12,13 +12,11 @@ export class HeaderComponent {
     this.domSelectorId = `#${domSelector}`;
     this.domSelectorClass = `.${domSelector}`;
     this.headerContainer = this._createModalDomElemet();
-    console.log($);
 
     // adding a modal to body
-    this.dom.body.appendChild( this.headerContainer );
+    Component('app-header', this.headerContainer);
+    Component('app-footer')
 
-    // tratando de correr la funcion create component
-    // createComponent( 'app-header', this.headerContainer );
     this._setHeaderContent('hola samigosss!!!');
   }
 
