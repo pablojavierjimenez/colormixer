@@ -2,6 +2,7 @@
  * IMPORTS
  */
 // MODULES
+import './app.css';
 import { $ } from './helpers/helper';
 import { ModalComponent } from './modules/modal/modal.component';
 import { HeaderComponent } from './modules/header/header.component';
