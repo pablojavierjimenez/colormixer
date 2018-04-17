@@ -5,7 +5,8 @@ class Helpers {
   constructor() {
     this.$ = this._$;
     this.createDomElement = this._createDomElement;
-    this.createComponent = this._createComponent;
+    this.createComponent = this._createComponent( this._$ );
+
   }
   /**
    * @method
@@ -21,7 +22,7 @@ class Helpers {
         item.innerHTML = tpl;
       };
       item.add = (tpl) => {
-        let el = parser.parseFromString(markup, "text/xml");
+        let el = parser.parseFromString( tpl, "text/xml");
         el = el.documentElement;
         item.append(el);
       };
@@ -86,29 +87,61 @@ class Helpers {
     return container;
   }
 
-  _createComponent ( customElementName , template) {
-    window.customElements.define(
-      customElementName,
-      class extends HTMLElement {
-        constructor() {
-          // If you define a ctor, always call super() first!
-          // This is specific to CE and required by the spec.
-          super();
-          this.innerHTML = template;
-          // Setup a click listener on <app-drawer> itself.
-          this.addEventListener('click', ( ev ) => {
-            console.log(customElementName, ev);
-          });
-        }
-      },
-      {
-        extends: 'div'
-      }
-    );
+  // FIXME: algun dia ver por que me fallava esto
+  // no me dejava correrlo a dentro me decia unespected new ilegal invocation
+  // _createComponent ( customElementName , template ) {
+  // window.customElements.define(
+  //   customElementName,
+  //   class extends HTMLElement {
+  //     constructor() {
+  //       // If you define a ctor, always call super() first!
+  //       // This is specific to CE and required by the spec.
+  //       super();
+  //       this.innerHTML = template;
+  //       // Setup a click listener on <app-drawer> itself.
+  //       this.addEventListener('click', ( ev ) => {
+  //         console.log(customElementName, ev);
+  //       });
+  //     }
+  //   },
+  //   {
+  //     extends: 'div'
+  //   }
+  // );
+  // }
+  _createComponent ( $ ) {
 
+
+    return ( customElementName , template = `<span>Hello World!!</span>`) => {
+      let $el = $( customElementName );
+
+      if ( template instanceof HTMLElement ) {
+        $el.appendChild( template );
+        return false;
+      };
+
+      if ( $el === undefined || $el ===  null) {
+        $el = document.createElement( customElementName );
+        document.body.appendChild( $el );
+        $el = $( customElementName );
+      }
+
+      try {
+        if ( ( template instanceof HTMLElement ) ) {
+          $el.add( template );
+        } else if ( typeof( template ) === 'string' ) {
+          console.log('tpl by ADD');
+          $el.html( template );
+        }
+
+      } catch (error) {
+        console.log('error',error);
+      }
+
+    }
   }
-}
-let Helper = new Helpers();
-export let $ = Helper.$;
-export let createDomElement = Helper.createDomElement;
-export let createComponent = Helper.createComponent;
+  }
+  let Helper = new Helpers();
+  export let $ = Helper.$;
+  export let createDomElement = Helper.createDomElement;
+  export let Component = Helper.createComponent;
