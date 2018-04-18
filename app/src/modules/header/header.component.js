@@ -11,24 +11,16 @@ export class HeaderComponent {
     this.domSelector = domSelector;
     this.domSelectorId = `#${domSelector}`;
     this.domSelectorClass = `.${domSelector}`;
-    this.headerContainer = this._createModalDomElemet();
-
-    // adding a modal to body
-    Component('app-header', this.headerContainer);
-    Component('app-footer')
-
-    this._setHeaderContent('hola samigosss!!!');
-  }
-
-  _createModalDomElemet(){
-    let header = createDomElement({
+    this.headerContainer = createDomElement({
       elementType: 'header',
       attributeObj: {
         class: `${this.domSelector}__container`
       }
     });
 
-    return header;
+    // adding a modal to body
+    Component('app-header', this.headerContainer);
+    this._setHeaderContent('Header Component');
   }
 
   _setHeaderContent( newContent = '' ) {
