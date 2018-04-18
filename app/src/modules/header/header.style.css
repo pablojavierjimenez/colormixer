@@ -5,4 +5,5 @@
   background-color: black;
   color: white;
   align-items: center;
+  box-sizing: border-box;
 }
