@@ -1,0 +1,8 @@
+.app_header__container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1vmin;
+  background-color: black;
+  color: white;
+  align-items: center;
+}

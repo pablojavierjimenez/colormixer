@@ -1,0 +1,7 @@
+body {
+  margin: 0;
+}
+h1 {
+  margin: 1vmin;
+}
+@import url("./modules/modal/modal.styles.css")
