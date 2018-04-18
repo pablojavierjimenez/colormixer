@@ -57,3 +57,20 @@
   padding: 1vh;
   background-color: #f00;
 }
+@media (min-width: 450px) and (orientation: portrait ){
+  .app_modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, .85);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
