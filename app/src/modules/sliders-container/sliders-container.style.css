@@ -1,0 +1,8 @@
+.app_sliders__container {
+  background-color: rgb(11, 15, 15);
+  box-sizing: border-box;
+  color: #ffffff;
+  padding: 1vmin;
+  min-height: 30vmin;
+  width: 100vw;
+}
