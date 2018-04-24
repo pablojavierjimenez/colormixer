@@ -1,20 +1,24 @@
-:root {
-  --main-bg-color: coral;
-}
-*{
-  /* padding: .5vmin; */
-}
+
+/* IMPORTS */
+@import url("./styles/variables.css");
+@import url("./styles/globals.css");
+
+
 body {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  font-family: sans-serif;
-  height: 100vh;
-  padding: 0;
   background-color: var(--main-bg-color);
-  justify-content: space-between;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 7vh auto 5vh;
+  grid-template-areas: 'header' 'main' 'footer';
+  grid-gap: .5vh;
+  height: 100vh;
+  margin: 0;
 }
-h1 {
-  margin: 1vmin;
+
+.app_main__container {
+  grid-area: main;
+  background-color: transparent;
+  text-align: center;
 }
 @import url("./modules/modal/modal.styles.css")

@@ -3,6 +3,6 @@
   box-sizing: border-box;
   color: #ffffff;
   padding: 1vmin;
-  min-height: 30vmin;
   width: 100vw;
+  grid-area: slider;
 }

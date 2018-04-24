@@ -1,11 +1,20 @@
 .app_footer__container {
-  font-size: 1vmin;
-  width: 100vw;
+  color: #000000;
+  display: grid;
+  grid-area: footer;
   background-color: #000000;
-  color:#ffffff;
-  padding: 1vmin;
-  box-sizing: border-box;
+  transition-timing-function: ease;
+  transition: 0.2s;
+  grid-template-columns: 75% 25%;
+  grid-template-rows: .5vh;
+  margin-top: 3.5vh;
+  padding: .5vh 1vw;
+  font-size: .1vmin;
 }
 .app_footer__container:hover {
+  color: #ffffff;
   font-size: 1rem;
+  grid-template-rows: 4vh;
+  margin-top: 0;
+  padding: .5vh 1vw;
 }

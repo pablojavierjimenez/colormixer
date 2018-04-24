@@ -25,7 +25,7 @@ export class HeaderComponent {
 
   _setHeaderContent( newContent = '' ) {
     let template = `
-      <h1 class="app_header__title">${newContent}</h1>
+      <div class="app_header__title">${newContent}</div>
       <span class="app_header__menu">menu</button>`;
     return $('.app_header__container').html(template);
   }
