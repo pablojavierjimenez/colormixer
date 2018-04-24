@@ -1,6 +1,11 @@
 .app_footer__container {
+  font-size: 1vmin;
   width: 100vw;
-  background-color: cadetblue;
+  background-color: #000000;
+  color:#ffffff;
   padding: 1vmin;
   box-sizing: border-box;
+}
+.app_footer__container:hover {
+  font-size: 1rem;
 }

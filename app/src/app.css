@@ -1,9 +1,17 @@
+:root {
+  --main-bg-color: coral;
+}
+*{
+  /* padding: .5vmin; */
+}
 body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  font-family: sans-serif;
   height: 100vh;
-  background-color: darksalmon;
+  padding: 0;
+  background-color: var(--main-bg-color);
   justify-content: space-between;
 }
 h1 {

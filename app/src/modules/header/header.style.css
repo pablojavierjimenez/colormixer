@@ -6,4 +6,8 @@
   color: white;
   align-items: center;
   box-sizing: border-box;
+  margin-top: -50px;
+}
+.app_header__container:hover{
+  margin-top: 0;
 }

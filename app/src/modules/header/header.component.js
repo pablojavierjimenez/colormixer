@@ -20,7 +20,7 @@ export class HeaderComponent {
 
     // adding a modal to body
     Component('app-header', this.headerContainer);
-    this._setHeaderContent('Header Component');
+    this._setHeaderContent('Color Mixer');
   }
 
   _setHeaderContent( newContent = '' ) {
