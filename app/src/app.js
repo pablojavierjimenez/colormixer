@@ -16,8 +16,8 @@ import { WebStorageService } from './services/webStorage.service';
 const app = {
   modules: {
     headerComponent: new HeaderComponent( document, 'app_header'),
-    targetColorComponent: new TargetColorComponent( document, 'app_targetColor'),
-    slidersComponent: new SlidersComponent( document, 'app_sliders'),
+    // targetColorComponent: new TargetColorComponent( document, 'app_targetColor'),
+    // slidersComponent: new SlidersComponent( document, 'app_sliders'),
     footerComponent: new FooterComponent( document, 'app_footer'),
     modalComponent: new ModalComponent( window, document, '.app_modal')
   },
