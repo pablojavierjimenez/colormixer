@@ -1,15 +1,20 @@
-.app_header__container {
-  color: #ffffff;
+app-header {
   grid-area: header;
+  background-color: var(--pink);
   background-color: #000000;
-  display: flex;
-  justify-content: space-between;
+  color: #ffffff;
   transition-timing-function: ease;
   transition: 0.2s;
   margin-top: -7vh;
   height: 7vh;
   padding: .5vh 1vmin;
 }
-.app_header__container:hover{
+
+.app_header__container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+app-header:hover{
   margin-top: 0;
 }

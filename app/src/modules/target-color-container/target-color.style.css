@@ -1,5 +1,7 @@
+app-target-color {
+  background-color: var(--pink);
+}
 .app_targetColor__container {
   padding: 1vmin;
-  background-color: #f389fd;
   grid-area: terget;
 }
