@@ -1,7 +1,20 @@
 app-target-color {
-  background-color: var(--pink);
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  align-items: center;
 }
 .app_targetColor__container {
-  padding: 1vmin;
+  background-color: var(--black);
+  padding: 2vmin;
   grid-area: terget;
+  height: 40vmin;
+  width: 40vmin;
+  box-sizing: border-box;
+}
+.app_targetColor__container > .app_targetColor__result {
+  width: 36vmin;
+  height: 36vmin;
+  display: flex;
+  box-sizing: border-box;
 }
