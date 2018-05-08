@@ -12,6 +12,7 @@ import { SliderRGBComponent } from './modules/slider-rgb/slider-rgb.component';
 import { FooterComponent } from './modules/footer/footer';
 // SERVICES
 import { WebStorageService } from './services/webStorage.service';
+import { AuthtenticationService } from './services/firebase.services';
 // --------------------------------------------------------------- //
 
 const app = {
@@ -24,9 +25,10 @@ const app = {
     modalComponent: new ModalComponent( window, document, '.app_modal')
   },
   services: {
-    webStorage: new WebStorageService(window)
+    webStorage: new WebStorageService(window),
+    authtenticationService: new AuthtenticationService(firebase)
   }
 };
 window.$ = $;
-console.log(app.modules);
+console.log(app.services);
 

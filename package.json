@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel app/index.html",
+    "build-develop": "parcel build app/index.html -d build/output --no-minify --public-url ./",
+    "production": " parcel build app/index.html -d build/dist --public-url ./",
     "start": "parcel app/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
