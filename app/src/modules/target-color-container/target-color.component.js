@@ -21,7 +21,7 @@ export class TargetColorComponent {
 
     // adding a modal to body
     Component('app-target-color', this.targetColorContainer);
-    this._setTargetColorContent('targetColor Works!!');
+    this._setTargetColorContent();
   }
 
   _setTargetColorContent(newContent = '') {

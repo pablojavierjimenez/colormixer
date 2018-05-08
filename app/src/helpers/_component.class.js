@@ -29,7 +29,7 @@ export class ComponentClass {
 
       // if element not exist its will created an apend to body
       if ($el === undefined || $el === null) {
-        console.log('$el', $el);
+        // console.log('$el', $el);
         $el = document.createElement(customElementName);
         document.body.appendChild($el);
         $el = $(customElementName);
@@ -43,21 +43,21 @@ export class ComponentClass {
   _JoinTemplate( DOMElement, template) {
 
     if (template instanceof HTMLElement) {
-      console.log('tpl by directly by APPENDCHILD');
+      // console.log('tpl by directly by APPENDCHILD');
       DOMElement.appendChild(template);
       return false;
     };
 
     try {
       if (template instanceof HTMLElement) {
-        console.log('tpl by ADD');
+        // console.log('tpl by ADD');
         DOMElement.add(template);
       } else if (typeof (template) === 'string') {
-        console.log('tpl by HTML');
+        // console.log('tpl by HTML');
         DOMElement.html(template);
       }
     } catch (error) {
-      console.log('error', error);
+      // console.log('error', error);
       return false;
     }
   }

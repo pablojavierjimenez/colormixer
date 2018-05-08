@@ -28,17 +28,17 @@ export class SliderRGBComponent {
   _setsliderRGBContent(newContent = '') {
     let template = `
       <div id="${this.domSelector}__RED" class="${this.domSelector}_group" data-channel="RED" data-color="255">
-        <input id="${this.domSelector}_red__input" class="${this.domSelector}_input" type="range" min="0" max="2550" value="2550">
+        <input id="${this.domSelector}_red__input" class="${this.domSelector}_input app_sliderFader app_sliderFader--red" type="range" min="0" max="2550" value="2550">
         <span class="${this.domSelector}_value app_sliderRGB_display">255</span>
         <span class="${this.domSelector}_porcentage app_sliderRGB_display">100%</span>
       </div>
       <div id="${this.domSelector}__GREEN" class="${this.domSelector}_group" data-channel="GREEN" data-color="255">
-        <input id="${this.domSelector}_green__input" class="${this.domSelector}_input" type="range" min="0" max="2550" value="2550">
+        <input id="${this.domSelector}_green__input" class="${this.domSelector}_input app_sliderFader app_sliderFader--green" type="range" min="0" max="2550" value="2550">
         <span class="${this.domSelector}_value app_sliderRGB_display">255</span>
         <span class="${this.domSelector}_porcentage app_sliderRGB_display">100%</span>
       </div>
       <div id="${this.domSelector}__BLUE" class="${this.domSelector}_group" data-channel="BLUE" data-color="255">
-        <input id="${this.domSelector}_blue__input" class="${this.domSelector}_input" type="range" min="0" max="2550" value="2550">
+        <input id="${this.domSelector}_blue__input" class="${this.domSelector}_input app_sliderFader app_sliderFader--blue" type="range" min="0" max="2550" value="2550">
         <span class="${this.domSelector}_value app_sliderRGB_display">255</span>
         <span class="${this.domSelector}_porcentage app_sliderRGB_display">100%</span>
       </div>`;

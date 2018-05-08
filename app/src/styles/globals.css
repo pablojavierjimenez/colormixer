@@ -1,4 +1,45 @@
 *{
   font-family: sans-serif;
-  font-size: 2.3vmin;
+  font-size: 2vmin;
+}
+
+.app_sliderFader {
+  -webkit-appearance: none;
+  border-radius: 5px;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  height: 1vh;
+  margin: 2vh 0;
+}
+
+.app_sliderFader::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: .4vmin solid #000;
+    background: #fff;
+    box-shadow: 0 0 1vmin rgb(255, 255, 255, 0.6);
+    cursor: pointer;
+    margin-right: -.5vmin;
+}
+
+.app_sliderFader::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+.app_sliderFader--red{
+  background: linear-gradient(to right, #000000, #ff0000);
+}
+.app_sliderFader--green{
+  background: linear-gradient(to right, #000000, #00ff00);
+}
+.app_sliderFader--blue{
+  background: linear-gradient(to right, #000000, #0000ff);
 }

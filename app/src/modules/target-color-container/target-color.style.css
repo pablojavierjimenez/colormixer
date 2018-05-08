@@ -13,6 +13,7 @@ app-target-color {
   box-sizing: border-box;
 }
 .app_targetColor__container > .app_targetColor__result {
+  background-color: rgb( 255, 255, 255);
   width: 36vmin;
   height: 36vmin;
   display: flex;
