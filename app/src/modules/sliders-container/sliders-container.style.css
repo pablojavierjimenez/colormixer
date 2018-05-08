@@ -1,8 +1,12 @@
+app-sliders{
+  background-color: var(--black);
+}
+
 .app_sliders__container {
-  background-color: rgb(11, 15, 15);
   box-sizing: border-box;
   color: #ffffff;
+  grid-area: slider;
   padding: 1vmin;
   width: 100vw;
-  grid-area: slider;
+  height: 5vh;
 }

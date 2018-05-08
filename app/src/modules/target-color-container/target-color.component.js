@@ -26,7 +26,7 @@ export class TargetColorComponent {
 
   _setTargetColorContent(newContent = '') {
     let template = `
-      <span class="app_targetColor__title">${newContent}</span>`;
+      <span class="app_targetColor__result">${newContent}</span>`;
     return $('.app_targetColor__container').html(template);
   }
 }

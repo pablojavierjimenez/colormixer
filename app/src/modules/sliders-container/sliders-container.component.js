@@ -25,8 +25,7 @@ export class SlidersComponent {
   }
 
   _setSlidersContent(newContent = '') {
-    let template = `
-      <span class="app_sliders__title">${newContent}</span>`;
+    let template = `<app-slider-rgb></app-slider-rgb>`;
     return $('.app_sliders__container').html(template);
   }
 }
