@@ -16,26 +16,28 @@ export class AuthtenticationService {
       "messagingSenderId": "921648506580"
     };
 
-    firebase.initializeApp(this.config);
+    if (!firebase.apps.length) {
+      firebase.initializeApp(this.config);
+  }
 
     this.getLoginWithGoogle = this._loginWithGoogle;
 
-
   }
 
-
   _loginWithGoogle() {
-    if (firebase.auth.currentUser) {
+    if (!firebase.auth().currentUser) {
 
       let provider = new firebase.auth.GoogleAuthProvider();
 
       provider.addScope('https://www.google.com/auth/plus.login');
 
-      firebase.auth().singnInWithPopup(provider)
+      firebase.auth().signInWithPopup(provider)
         .then((result) => {
 
           let token = result.credential.accesstoken;
           let user = result.user;
+
+          console.log(user);
 
         })
         .catch((error) => {
