@@ -1,32 +1,33 @@
 app-footer{
-  background-color: #000000;
+  background-color:var(--black);
   grid-area: footer;
   display: grid;
   grid-template-rows: .5vh;
-  margin-top: 4vh;
   transition-timing-function: ease;
   transition: 0.3s;
   box-sizing: border-box;
+  border-bottom: 1vh solid #000;
+  /* border-top: .1vh solid #fff; */
+  /* border-top: .5 solid transparent; */
 }
 
 .app_footer__container {
   box-sizing: border-box;
   display: grid;
-  color: #000000;
   transition-timing-function: ease;
   transition: 0.5s;
   grid-template-columns: 75% 25%;
+  color: #ffffff;
   padding: .5vh 1vw;
 }
 
 .app_footer__container > span {
-    display: none;
+  visibility: hidden;
 }
 
 app-footer:hover {
-  color: #ffffff;
+  background-color: #000000;
   grid-template-rows: 5vh;
-  margin-top: 0;
 }
 
 .app_footer__container:hover {
@@ -35,5 +36,5 @@ app-footer:hover {
 }
 
 .app_footer__container:hover > span {
-    display: block;
+    visibility: visible;
 }

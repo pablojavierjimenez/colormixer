@@ -1,0 +1,10 @@
+.app_main__container {
+  background-color: var(--purple-light);
+  grid-area: main;
+  text-align: center;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto 20vh;
+  grid-template-areas: 'target' 'sliders';
+}
